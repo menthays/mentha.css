@@ -1,0 +1,84 @@
+// some params and functions
+@import "params.styl"
+@import "reset.styl"
+
+traditionalWidth(n)
+  width floor((n / 12) * 100%, 2)
+
+flexWidth(n)
+  flex n 1 auto
+
+flexArr = {
+  start: 'flex-start',
+  end: 'flex-end',
+  center: 'center',
+  between: 'space-between',
+  around: 'space-around'
+}
+
+
+// stylesheet start
+
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+div,
+main
+  box-sizing border-box
+
+body
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+
+img
+  max-width 100%
+
+.container
+  max-width $maxWidth
+  margin 0 auto
+
+.row
+  display flex
+  flex-flow row wrap
+  margin 0 auto
+  overflow hidden
+
+  &::before,
+  &::after
+    content ""
+    display table
+    line-height 0
+
+  &::after
+    clear both
+
+  for number in 1...13
+    .w-{number}
+      traditionalWidth(number)
+  for number in 1...9
+    .i-{number}
+      flexWidth(number)
+
+  &
+    @media screen and (max-width: 599px)
+      for number in 1...13
+        .w-{number}
+          width 100%!important
+      for number in 1...9
+        .i-{number}
+          width 100%!important
+
+.flex
+  display flex
+  justify-content center
+  align-items center
+  &
+    for keyJ, valueJ in flexArr
+      for keyA, valueA in flexArr
+        &-{keyJ}-{keyA}
+          display flex
+          justify-content valueJ
+          align-items valueA

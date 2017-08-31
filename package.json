@@ -1,0 +1,22 @@
+{
+  "name": "mentha.css",
+  "version": "0.0.1",
+  "description": "common class used for flex box",
+  "main": "src/mentha.css",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.3",
+    "poststylus": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compress": "cd src && stylus --use ../node_modules/poststylus --with '[\"autoprefixer\"]' -c mentha.stylus > mentha.css && cd .."
+  },
+  "author": "",
+  "license": "ISC"
+}
