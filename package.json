@@ -15,7 +15,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compress": "cd src && stylus --use ../node_modules/poststylus --with '[\"autoprefixer\"]' -c mentha.stylus > mentha.css && cd .."
+    "try": "cd src && stylus -c <mentha.stylus> mentha.css && cd ..",
+    "compress": "cd src && stylus --use ../node_modules/poststylus --with '[\"autoprefixer\"]' -c <mentha.stylus> mentha.css && cd .."
   },
   "author": "",
   "license": "ISC"

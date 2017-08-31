@@ -1,6 +1,5 @@
-// some params and functions
-@import "params.styl"
-@import "reset.styl"
+@import "./params"
+@import "./reset"
 
 traditionalWidth(n)
   width floor((n / 12) * 100%, 2)
@@ -15,10 +14,6 @@ flexArr = {
   between: 'space-between',
   around: 'space-around'
 }
-
-
-// stylesheet start
-
 
 article,
 aside,
